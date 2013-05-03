@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/benchmark' if ENV["BENCH"]
 require 'minitest/pride'
-require File.expand_path('../../../lib/area.rb', __FILE__)
+require File.expand_path('../../../lib/locator.rb', __FILE__)
 
 class TestInteger < MiniTest::Unit::TestCase
 
@@ -216,7 +216,7 @@ end
 class TestArea < MiniTest::Unit::TestCase
 
   def test_that_regions_is_an_array
-    assert_instance_of Array, Area.regions
+    assert_instance_of Array, Locator.regions
   end
 
 end

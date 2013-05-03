@@ -5,21 +5,21 @@ else
   require 'faster_csv'
 end
 
-require 'area/array'
-require 'area/integer'
-require 'area/string'
+require 'locator/array'
+require 'locator/integer'
+require 'locator/string'
 
-module Area
+module Locator
 
   zip_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'zipcodes.csv'))
-  area_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'areacodes.csv'))
+  locator_path = File.open(File.join(File.dirname(__FILE__), '..', 'data', 'areacodes.csv'))
 
   # there is probably a better way to do this...
   if RUBY_VERSION.to_f >= 1.9
-    @area_codes = CSV.read(area_path)
+    @area_codes = CSV.read(locator_path)
     @zip_codes = CSV.read(zip_path)
   else
-    @area_codes = FasterCSV.parse(area_path)
+    @area_codes = FasterCSV.parse(locator_path)
     @zip_codes = FasterCSV.parse(zip_path)
   end
 
